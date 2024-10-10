@@ -1,12 +1,13 @@
 ---
 import BtnSumate from "./BtnSumate.astro";
+import img from "src/imgs/milei-balcon-hd.webp";
 ---
 
 <section class="relative h-screen flex justify-center items-center">
   <img
     class="w-screen h-screen object-cover"
-    src="/src/imgs/milei-balcon-hd.webp"
-    alt=""
+    src={img.src}
+    alt="Presidente milei en el balcon de la casa rosada"
   />
   <BtnSumate class="absolute bottom-10 lg:bottom-36" />
 </section>

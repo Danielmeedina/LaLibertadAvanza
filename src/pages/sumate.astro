@@ -1,6 +1,7 @@
 ---
 import MyInput from "@/components/MyInput.astro";
 import Layout from "@layouts/Layout.astro";
+import milei from "@/imgs/milei-asuncion.webp";
 ---
 
 <Layout title="La Libertad Avanza">
@@ -10,8 +11,8 @@ import Layout from "@layouts/Layout.astro";
     >
       <img
         class="hidden xl:block max-w-[500px] min-h-full rounded-md object-cover bg-center"
-        src="/src/imgs/milei-asuncion.webp"
-        alt="c"
+        src={milei.src}
+        alt="Presidente javier milei en el dia de la asuncion"
       />
       <aside>
         <h1 class="text-[#b23c8e] montserrat font-extrabold text-4xl mb-4">

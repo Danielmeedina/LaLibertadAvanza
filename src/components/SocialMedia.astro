@@ -1,6 +1,14 @@
 ---
 import Xicon from "@/icons/Xicon.astro";
 import Instagram from "@/icons/Instagram.astro";
+import javier_milei from "@/imgs/javier-milei.webp";
+import karina_milei from "src/imgs/karina-milei.webp";
+import caputo from "src/imgs/toto-caputo.webp";
+import menem from "src/imgs/martin-menem.webp";
+import adorni from "src/imgs/manuel-adorni.webp";
+import francos from "src/imgs/guillermo-francos.webp";
+import romo from "src/imgs/agustin-romo.webp";
+import sotelo from "src/imgs/nahuel-sotelo.webp";
 
 interface Members {
   name: string;
@@ -13,43 +21,43 @@ const members: Members[] = [
   {
     name: "Karina Milei",
     position: "Secretaria general de la Presidencia",
-    img: "src/imgs/karina-milei.webp",
+    img: karina_milei.src,
     social: "https://x.com/KarinaMileiOk",
   },
   {
     name: "Toto Caputo",
     position: "Ministro de economía",
-    img: "src/imgs/toto-caputo.webp",
+    img: caputo.src,
     social: "https://x.com/LuisCaputoAR",
   },
   {
     name: "Martín Menem",
     position: "Presidente de la Cámara de Diputados",
-    img: "src/imgs/martin-menem.webp",
+    img: menem.src,
     social: "https://x.com/MenemMartin",
   },
   {
     name: "Manuel Adorni",
     position: "Vocero presidencial",
-    img: "src/imgs/manuel-adorni.webp",
+    img: adorni.src,
     social: "https://x.com/madorni",
   },
   {
     name: "Guillermo Francos",
     position: "Jefe de gabinete",
-    img: "src/imgs/guillermo-francos.webp",
+    img: francos.src,
     social: "https://x.com/GAFrancosOk",
   },
   {
     name: "Agustín Romo",
     position: "Diputado",
-    img: "src/imgs/agustin-romo.webp",
+    img: romo.src,
     social: "https://x.com/agustinromm",
   },
   {
     name: "Nahuel Sotelo",
     position: "Diputado",
-    img: "src/imgs/nahuel-sotelo.webp",
+    img: sotelo.src,
     social: "https://x.com/nsotelolar",
   },
 ];
@@ -68,7 +76,7 @@ const members: Members[] = [
     class="relative flex flex-col gap-2 justify-end w-full rounded-md overflow-hidden h-[20rem] md:h-[30rem] group"
   >
     <img
-      src="src/imgs/javier-milei.webp"
+      src={javier_milei.src}
       alt="Javier milei, Presidente de la nacion"
       loading="lazy"
       class="object-cover absolute h-full w-full inset-0 group-hover:scale-105 transition-transform"
@@ -110,6 +118,7 @@ const members: Members[] = [
             src={member.img}
             alt={`${member.name},${member.position}`}
             loading="lazy"
+            decoding="async"
             class="object-cover absolute h-full w-full inset-0 group-hover:scale-105 transition-transform"
           />
           <header class="flex flex-col justify-end lg:px-3 pb-2 lg:pb-4 h-1/2 bg-gradient-to-t from-[#6C4C99] to-neutral-[#6C4C99]/0 z-10">
