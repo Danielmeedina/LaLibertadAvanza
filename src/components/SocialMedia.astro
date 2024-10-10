@@ -65,13 +65,13 @@ const members: Members[] = [
     <span class="block w-6 h-1 bg-[#6C4C99] mt-2"></span>
   </div>
   <article
-    class="relative flex flex-col gap-2 justify-end w-full rounded-md overflow-hidden h-[20rem] md:h-[30rem]"
+    class="relative flex flex-col gap-2 justify-end w-full rounded-md overflow-hidden h-[20rem] md:h-[30rem] group"
   >
     <img
       src="src/imgs/javier-milei.webp"
       alt="Javier milei, Presidente de la nacion"
       loading="lazy"
-      class="object-cover absolute h-full w-full inset-0"
+      class="object-cover absolute h-full w-full inset-0 group-hover:scale-105 transition-transform"
     />
     <header
       class="flex flex-col justify-end lg:px-6 pb-2 lg:pb-4 h-1/2 bg-gradient-to-t from-[#6C4C99] to-neutral-[#6C4C99]/0 z-10"
@@ -105,12 +105,12 @@ const members: Members[] = [
   <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full mt-4">
     {
       members.map((member) => (
-        <article class="relative flex flex-col gap-2 justify-end w-full h-full rounded-md overflow-hidden aspect-square first:[grid-column:1/-1] md:first:[grid-column:1] first:h-[320px]">
+        <article class="relative flex flex-col gap-2 justify-end w-full h-full rounded-md overflow-hidden aspect-square first:[grid-column:1/-1] md:first:[grid-column:1] first:h-[320px] group">
           <img
             src={member.img}
             alt={`${member.name},${member.position}`}
             loading="lazy"
-            class="object-cover absolute h-full w-full inset-0"
+            class="object-cover absolute h-full w-full inset-0 group-hover:scale-105 transition-transform"
           />
           <header class="flex flex-col justify-end lg:px-3 pb-2 lg:pb-4 h-1/2 bg-gradient-to-t from-[#6C4C99] to-neutral-[#6C4C99]/0 z-10">
             <div class="flex flex-col p-1 md:p-0 text-white">
