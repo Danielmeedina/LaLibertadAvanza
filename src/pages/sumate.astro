@@ -1,0 +1,51 @@
+---
+import MyInput from "@/components/MyInput.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="La Libertad Avanza">
+  <main class="min-h-screen pt-[170px] bg-[#393279]">
+    <section
+      class="max-w-[1200px] w-full mx-auto p-4 flex justify-center xl:justify-between gap-4 pb-28"
+    >
+      <img
+        class="hidden xl:block max-w-[500px] min-h-full rounded-md object-cover bg-center"
+        src="/src/imgs/milei-asuncion.webp"
+        alt="c"
+      />
+      <aside>
+        <h1 class="text-[#b23c8e] montserrat font-extrabold text-4xl mb-4">
+          Completá tus datos para sumarte
+        </h1>
+        <div class="bg-[#d5b93d] w-[50px] min-h-[8px] mb-8"></div>
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+          <MyInput label="nombre" type="text" />
+          <MyInput label="apellido" type="text" />
+          <MyInput label="edad" type="text" />
+          <div class="flex flex-col w-full gap-2">
+            <label for="sexo" class="capitalize text-white">sexo</label>
+            <select
+              name="sexo"
+              id="sexo"
+              class="w-full rounded-[4px] p-2 h-[50px] border-[1px] border-gray-500 bg-[#fff]"
+            >
+              <option value="">seleccion un sexo</option>
+              <option value="hombre">Hombre</option>
+              <option value="mujer">Mujer</option>
+            </select>
+          </div>
+          <MyInput label="DNI" type="text" full />
+          <MyInput label="provincia" type="text" />
+          <MyInput label="barrio" type="text" />
+          <MyInput label="email" type="email" />
+          <MyInput label="celular" type="tel" />
+          <button
+            type="submit"
+            class="px-12 py-4 mt-5 rounded-md text-xl max-w-44 bg-[#b23c8e] text-white"
+            >Enviar</button
+          >
+        </form>
+      </aside>
+    </section>
+  </main>
+</Layout>

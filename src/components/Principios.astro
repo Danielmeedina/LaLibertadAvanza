@@ -1,0 +1,66 @@
+---
+const principios = [
+  {
+    text: "Nuestro compromiso es con la sociedad. No nos importa lo que opinen los que arruinaron el país.",
+  },
+  {
+    text: "La inflación es la única variable que importa, vamos a destruirla.",
+  },
+  {
+    text: "El Estado no debe ser gestionado, debe ser desmantelado.",
+  },
+  {
+    text: " Si el Estado de Derecho no protege la vida, la libertad y la propiedad de los argentinos, entonces el Estado de Derecho no existe.",
+  },
+  {
+    text: "La República es un medio para proteger el Estado de Derecho frente a los arbitrios del monarca. Si no es eso, no es nada.",
+  },
+  {
+    text: "El delito debe ser reprimido siempre y en todo lugar.",
+  },
+  {
+    text: "El diálogo es un medio, no un fin en sí mismo. Si no conduce a un país más libre, se vuelve irrelevante.",
+  },
+  {
+    text: "La política debe discutir ideas, no perseguir al adversario.",
+  },
+  {
+    text: "La libertad de expresión no significa que aquellos que la ejercen no pueden ser criticados.",
+  },
+];
+---
+
+<section
+  id="principios"
+  class="w-full mt-16 md:mt-32 p-4 max-w-screen-lg mx-auto font-medium"
+>
+  <h2 class="text-xl lg:text-2xl text-[#393279]" tabindex="0">Principios</h2>
+  <span class="block w-6 h-1 bg-[#D5B93D] mt-2"></span>
+  <ol
+    class="mt-12 lg:mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3 montserrat text-black"
+  >
+    {
+      principios.map((principio, index) => (
+        <li
+          tabindex="0"
+          class="p-4 shadow-[1px_1px_6px_hsl(261,20%,95%)] border border-[#c2badb2a] bg-[#f7f7f7] rounded flex flex-col justify-center undefined"
+        >
+          <span class="text-xl block text-[rgb(108,76,153)]">{index + 1}</span>
+          <p>{principio.text}</p>
+        </li>
+      ))
+    }
+    <li
+      tabindex="0"
+      class="p-4 shadow-[1px_1px_6px_hsl(261,20%,95%)] border border-[#c2badb2a] bg-[#f7f7f7] rounded justify-center flex flex-col lg:p-10 lg:items-center lg:justify-center lg:col-start-1 lg:col-end-4"
+    >
+      <span class="text-xl lg:font-normal lg:text-2xl text-black">10.</span>
+      <p class="lg:text-3xl">
+        TODOS SON <strong
+          class="text-transparent bg-[linear-gradient(270deg,rgb(108,76,153),rgb(178,60,142))] [background-clip:text]"
+          >BIENVENIDOS A LAS FUERZAS DEL CIELO.</strong
+        >
+      </p>
+    </li>
+  </ol>
+</section>

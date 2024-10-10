@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"input"> {
+  label: string;
+  full?: boolean;
+}
+
+const { label, full = false, class: className, ...props } = Astro.props;
+---
+
+<div
+  class={`flex flex-col w-full ${full ? "[grid-column:1/-1]" : undefined} gap-2`}
+>
+  <label for={label} class="capitalize text-white">{label}</label>
+  <input
+    class={`w-full rounded-[4px] p-2 h-[50px] border-[1px] border-gray-500 bg-[#fff] ${className}`}
+    placeholder={`Ingrese su ${label}`}
+    {...props}
+  />
+</div>

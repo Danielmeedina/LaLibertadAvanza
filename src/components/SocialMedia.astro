@@ -1,0 +1,137 @@
+---
+import Xicon from "@/icons/Xicon.astro";
+import Instagram from "@/icons/Instagram.astro";
+
+interface Members {
+  name: string;
+  position: string;
+  img: string;
+  social: string;
+}
+
+const members: Members[] = [
+  {
+    name: "Karina Milei",
+    position: "Secretaria general de la Presidencia",
+    img: "src/imgs/karina-milei.webp",
+    social: "https://x.com/KarinaMileiOk",
+  },
+  {
+    name: "Toto Caputo",
+    position: "Ministro de economía",
+    img: "src/imgs/toto-caputo.webp",
+    social: "https://x.com/LuisCaputoAR",
+  },
+  {
+    name: "Martín Menem",
+    position: "Presidente de la Cámara de Diputados",
+    img: "src/imgs/martin-menem.webp",
+    social: "https://x.com/MenemMartin",
+  },
+  {
+    name: "Manuel Adorni",
+    position: "Vocero presidencial",
+    img: "src/imgs/manuel-adorni.webp",
+    social: "https://x.com/madorni",
+  },
+  {
+    name: "Guillermo Francos",
+    position: "Jefe de gabinete",
+    img: "src/imgs/guillermo-francos.webp",
+    social: "https://x.com/GAFrancosOk",
+  },
+  {
+    name: "Agustín Romo",
+    position: "Diputado",
+    img: "src/imgs/agustin-romo.webp",
+    social: "https://x.com/agustinromm",
+  },
+  {
+    name: "Nahuel Sotelo",
+    position: "Diputado",
+    img: "src/imgs/nahuel-sotelo.webp",
+    social: "https://x.com/nsotelolar",
+  },
+];
+---
+
+<section
+  class="w-full flex flex-col justify-center items-center mt-24 p-4 max-w-screen-lg m-[0_auto]"
+>
+  <div class="w-full mb-12">
+    <h2 class="font-black text-xl lg:text-2xl text-[#af8f00]">
+      Redes sociales
+    </h2>
+    <span class="block w-6 h-1 bg-[#6C4C99] mt-2"></span>
+  </div>
+  <article
+    class="relative flex flex-col gap-2 justify-end w-full rounded-md overflow-hidden h-[20rem] md:h-[30rem]"
+  >
+    <img
+      src="src/imgs/javier-milei.webp"
+      alt="Javier milei, Presidente de la nacion"
+      loading="lazy"
+      class="object-cover absolute h-full w-full inset-0"
+    />
+    <header
+      class="flex flex-col justify-end lg:px-6 pb-2 lg:pb-4 h-1/2 bg-gradient-to-t from-[#6C4C99] to-neutral-[#6C4C99]/0 z-10"
+    >
+      <div class="flex flex-col p-1 md:p-0 text-white">
+        <h3 class="text-2xl font-semibold">Javier Milei</h3>
+        <span class="text-gray-100 font-normal text-xs md:text-sm"
+          >Presidente de la nacion</span
+        >
+      </div>
+    </header>
+    <aside class="absolute right-4 top-2 flex flex-col gap-1 z-30">
+      <a
+        class="p-2 w-fit rounded-md overflow-hidden bg-[#6C4C9A] lg:bg-transparent hover:bg-[#835EB7] lg:hover:bg-slate-300/30 transition duration-300"
+        target="_blank"
+        title="Twitter Presidente Javier Milei"
+        href="https://x.com/JMilei"
+      >
+        <Xicon />
+      </a>
+      <a
+        class="p-2 w-fit rounded-md overflow-hidden bg-[#6C4C9A] lg:bg-transparent hover:bg-[#835EB7] lg:hover:bg-slate-300/30 transition duration-300"
+        target="_blank"
+        title="Instagram Presidente Javier Milei"
+        href="https://www.instagram.com/javiermilei"
+      >
+        <Instagram />
+      </a>
+    </aside>
+  </article>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full mt-4">
+    {
+      members.map((member) => (
+        <article class="relative flex flex-col gap-2 justify-end w-full h-full rounded-md overflow-hidden aspect-square first:[grid-column:1/-1] md:first:[grid-column:1] first:h-[320px]">
+          <img
+            src={member.img}
+            alt={`${member.name},${member.position}`}
+            loading="lazy"
+            class="object-cover absolute h-full w-full inset-0"
+          />
+          <header class="flex flex-col justify-end lg:px-3 pb-2 lg:pb-4 h-1/2 bg-gradient-to-t from-[#6C4C99] to-neutral-[#6C4C99]/0 z-10">
+            <div class="flex flex-col p-1 md:p-0 text-white">
+              <h3 class="text-lg sm:text-2xl font-semibold">{member.name}</h3>
+              <span class="text-gray-100 font-normal text-xs md:text-sm">
+                {member.position}
+              </span>
+            </div>
+          </header>
+          <aside class="absolute right-2 top-2 flex flex-col gap-1 z-30">
+            <a
+              class="p-2 lg:p-2 w-fit rounded-md overflow-hidden bg-[#6C4C9A] lg:bg-transparent hover:bg-[#835EB7] lg:hover:bg-slate-300/30 transition duration-300"
+              target="_blank"
+              title={`Twitter ${member.name}`}
+              href={member.social}
+            >
+              <Xicon />
+            </a>
+          </aside>
+        </article>
+      ))
+    }
+  </div>
+</section>

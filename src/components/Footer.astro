@@ -1,0 +1,44 @@
+---
+import Instagram from "@/icons/Instagram.astro";
+import Xicon from "@/icons/Xicon.astro";
+import YoutubeIcon from "@/icons/YoutubeIcon.astro";
+---
+
+<footer
+  class="flex justify-center items-center w-full min-h-[15vh] bg-[#393279] text-white border-t-white border-t-[1px]"
+>
+  <div
+    class="max-w-[1030px] w-full mx-auto p-4 flex justify-between items-center gap-2 flex-col-reverse md:flex-row"
+  >
+    <section class="flex flex-col justify-center items-center gap-1">
+      <p class="text-xl">Redes sociales</p>
+      <ul class="flex gap-3 justify-center items-center">
+        <li>
+          <a href="https://twitter.com/llibertadavanza">
+            <Xicon width="30" height="30" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/lalibertadavanzaoficial/">
+            <Instagram width="30" height="30" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/UCsf4Zm0Nka98N-75xElq0WQ">
+            <YoutubeIcon />
+          </a>
+        </li>
+      </ul>
+    </section>
+    <figure class="flex flex-row justify-center items-center">
+      <img
+        class="w-[80px]"
+        src="/la-libertad-avanza.svg"
+        alt="Logo de la libertad avanza"
+      />
+      <figcaption class="text-2xl pt-4 font-extralight">
+        La <span class="font-semibold">Libertad</span> Avanza
+      </figcaption>
+    </figure>
+  </div>
+</footer>

@@ -1,0 +1,41 @@
+---
+import BtnSumate from "./BtnSumate.astro";
+---
+
+<article
+  class="flex justify-center items-center w-full text-white mt-24 p-4 mb-24"
+>
+  <div
+    class="relative bg-gradient-to-r from-[#F5F5F5] to-[#FAFAFA] rounded w-full flex flex-col text-center px-4 pt-16 pb-14 justify-center items-center max-w-screen-lg overflow-hidden"
+  >
+    <div class="z-10 flex flex-col justify-center items-center">
+      <div
+        class="flex flex-col justify-center items-center bg-[linear-gradient(90deg,rgb(48,180,229),rgb(108,76,153),rgb(178,60,142))] [background-clip:text]"
+      >
+        <h3 class="text-2xl md:text-3xl font-bold text-transparent uppercase">
+          ¿Estás preparado para salvar el país?
+        </h3>
+        <p class="text-md md:text-xl py-2 text-black">
+          Si estás listo, unite <strong class="font-bold text-transparent"
+            >YA</strong
+          > a las
+          <strong class="font-bold text-transparent">Fuerzas del Cielo</strong>
+        </p>
+      </div>
+      <BtnSumate class="mt-10 md:mt-3" />
+    </div>
+    <div
+      class="w-full h-full bg-[url('/src/imgs/pattern.svg')] bg-cover bg-repeat absolute"
+    >
+    </div>
+    <img
+      draggable="false"
+      alt="logo la libertad avanza simple color"
+      loading="lazy"
+      width="374"
+      height="282"
+      class="absolute -top-16 -left-16 opacity-25"
+      src="/la-libertad-avanza.svg"
+    />
+  </div>
+</article>

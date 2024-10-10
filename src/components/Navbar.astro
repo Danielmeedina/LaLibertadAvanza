@@ -1,0 +1,176 @@
+<header
+  class="fixed container min-w-full mx-auto h-[15vh] pl-1 lg:pl-16 flex items-center justify-between md:justify-normal gap-4 text-white z-50"
+>
+  <a href="/" class="flex items-center gap-4">
+    <img
+      src="./la-libertad-avanza.svg"
+      width="150px"
+      height="150px"
+      class="w-[100px] h-[100px] md:w-[150px] md:h-[150px]"
+      alt="Logo de la libertad avanza"
+    />
+    <p class="text-xl sm:text-2xl mt-2 font-light">
+      LA <span class="font-bold">LIBERTAD</span> AVANZA
+    </p>
+  </a>
+  <nav
+    class="hidden md:block md:border-l-2 md:mt-2 md:py-2 md:px-4 border-gray-500"
+  >
+    <ul class="flex items-center gap-4">
+      <li>
+        <a
+          href="/#principios"
+          class="relative text-base font-semibold pb-1 after:content-[''] after:absolute after:inset-0 after:border-b-[1px] after:w-0 after:transition-[width_0.2s_ease] hover:after:w-full"
+          >Principios</a
+        >
+      </li>
+      <li>
+        <a
+          href="/sumate"
+          class="relative text-base font-semibold pb-1 after:content-[''] after:absolute after:inset-0 after:border-b-[1px] after:w-0 after:transition-[width_0.2s_ease] hover:after:w-full"
+          >Sumate</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <div class="relative pt-2 md:hidden">
+    <button
+      id="menu-button"
+      aria-label="menú de navegación"
+      class="text-white ml-10 mr-2 md:mr-0 lg:hidden"
+    >
+      <svg
+        width="50px"
+        height="40px"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        ><rect x="4" y="15" width="16" height="3" rx="1" fill="white"
+        ></rect><rect x="4" y="8" width="16" height="3" rx="1" fill="white"
+        ></rect></svg
+      >
+    </button>
+    <nav
+      class="hidden absolute -left-20 w-[171px] bg-[#6c4c99] p-4 rounded-md"
+      id="mobile-menu"
+    >
+      <span class="text-gray-400 select-none">Menú</span>
+      <ul class="flex flex-col gap-2 mt-6">
+        <li class="border-t-[1px] border-gray-400 pt-2">
+          <a href="/#principios" class="text-gray-300 hover:text-white"
+            >Principios</a
+          >
+        </li>
+        <li class="border-t-[1px] border-gray-400 pt-2">
+          <a href="/sumate" class="text-gray-300 hover:text-white">Sumate</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #mobile-menu.show {
+    display: block;
+  }
+  header {
+    animation-timeline: scroll(root);
+    animation-fill-mode: both;
+    animation-name: Navbar;
+    animation-range: 0 200px;
+    transition: all 0.5s ease;
+  }
+  @keyframes Navbar {
+    from {
+      background-color: transparent;
+    }
+    to {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+    }
+  }
+
+  header img {
+    animation-timeline: scroll(root);
+    animation-fill-mode: both;
+    animation-name: logo;
+    animation-range: 0 150px;
+    transition: all 0.5s ease;
+  }
+
+  @keyframes logo {
+    from {
+      transform: scale(2);
+    }
+    to {
+      transform: scale(0.7);
+    }
+  }
+
+  header p {
+    animation-timeline: scroll(root);
+    animation-fill-mode: both;
+    animation-name: lla;
+    animation-range: 0 200px;
+    transition: all 0.5s ease;
+  }
+
+  @keyframes lla {
+    from {
+      transform: translateX(40px);
+    }
+    to {
+      transform: translateX(-40px);
+      @apply text-xl;
+    }
+  }
+  header > nav {
+    animation-timeline: scroll(root);
+    animation-fill-mode: both;
+    animation-name: navbar;
+    animation-range: 0 200px;
+    transition: all 0.5s ease;
+  }
+
+  @keyframes navbar {
+    from {
+      transform: translateX(40px);
+    }
+    to {
+      transform: translateX(-40px);
+    }
+  }
+
+  @media (width <= 768px) {
+    @keyframes lla {
+      from {
+        transform: translateX(10px);
+      }
+      to {
+        transform: translateX(-30px);
+        @apply text-xl;
+      }
+    }
+  }
+</style>
+
+<script>
+  // Obtener referencias a los elementos HTML
+  const menuButton: HTMLButtonElement | null = document.getElementById(
+    "menu-button"
+  ) as HTMLButtonElement;
+  const mobileMenu: HTMLDivElement | null = document.getElementById(
+    "mobile-menu"
+  ) as HTMLDivElement;
+
+  // Función para manejar el click en el botón del menú
+  menuButton?.addEventListener("click", (e: MouseEvent): void => {
+    e.stopPropagation(); // Evitar que el evento cierre el menú
+    mobileMenu?.classList.toggle("show");
+  });
+
+  // Función para ocultar el menú si se hace click fuera de él
+  document.addEventListener("click", (): void => {
+    mobileMenu?.classList.remove("show");
+  });
+</script>
