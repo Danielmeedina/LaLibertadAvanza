@@ -14,7 +14,7 @@ const { label, full = false, class: className, ...props } = Astro.props;
 >
   <label for={label} class="capitalize text-white">{label}</label>
   <input
-    class={`w-full rounded-[4px] p-2 h-[50px] border-[1px] border-gray-500 bg-[#fff] ${className}`}
+    class={`w-full rounded-[4px] p-2 h-[50px] border-[1px] border-gray-500 bg-[#fff] placeholder:text-gray-900 ${className}`}
     placeholder={`Ingrese su ${label}`}
     {...props}
   />
